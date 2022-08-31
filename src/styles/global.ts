@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         box-shadow: 0 0 0 2px ${({ theme }) => theme['green-300']};
     }
     body {
-        background-color: ${({ theme }) => theme['gray-900']};
+        background-color: ${({ theme }) => theme['gray-800']};
         color: ${({ theme }) => theme['gray-300']};
         -webkit-font-smoothing: antialiased;
     }
