@@ -5,7 +5,7 @@ export const HeaderContent = styled.header`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 2.5rem 1rem 7.625rem;
+  padding: 2.5rem 1.5rem 7.625rem;
 `
 
 export const ContentWrapper = styled.div`
