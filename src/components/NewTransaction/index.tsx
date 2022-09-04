@@ -1,6 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { ArrowCircleUp, X, ArrowCircleDown } from 'phosphor-react'
-import { useTheme } from 'styled-components'
 import {
   Overlay,
   Content,
@@ -11,8 +10,6 @@ import {
 } from './styles'
 
 export function NewTransaction() {
-  const theme = useTheme()
-
   return (
     <Dialog.Portal>
       <Overlay />
@@ -27,12 +24,12 @@ export function NewTransaction() {
           <input type="text" placeholder="Categoria" />
 
           <TransactionType>
-            <TransactionTypeButton variant="income">
-              <ArrowCircleUp size={32} color={theme['green-300']} />
+            <TransactionTypeButton variant="income" value="income">
+              <ArrowCircleUp size={32} />
               entrada
             </TransactionTypeButton>
-            <TransactionTypeButton variant="outcome">
-              <ArrowCircleDown size={32} color={theme['red-300']} />
+            <TransactionTypeButton variant="outcome" value="outcome">
+              <ArrowCircleDown size={32} />
               Saida
             </TransactionTypeButton>
           </TransactionType>
