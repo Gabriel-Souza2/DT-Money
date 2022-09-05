@@ -29,8 +29,14 @@ export const SearchFormContainer = styled.form`
     justify-content: center;
     gap: 0.75rem;
     border-radius: 6px;
+    cursor: pointer;
 
-    &:hover {
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
       color: ${({ theme }) => theme.white};
       background-color: ${({ theme }) => theme['green-300']};
       transition: background-color 0.2s, color 0.2s;

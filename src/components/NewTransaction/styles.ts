@@ -43,6 +43,8 @@ export const NewTransactionForm = styled.form`
     background-color: ${({ theme }) => theme['gray-900']};
     border-radius: 6px;
     border: 0;
+    color: ${({ theme }) => theme['gray-300']};
+    -moz-appearance: textfield;
 
     &::placeholder {
       color: ${({ theme }) => theme['gray-500']};
@@ -57,8 +59,18 @@ export const NewTransactionForm = styled.form`
     border: 0;
     border-radius: 6px;
 
-    background-color: ${({ theme }) => theme['green-300']};
+    background-color: ${({ theme }) => theme['green-500']};
     color: ${({ theme }) => theme.white};
+    cursor: pointer;
+
+    &:not(:disabled):hover {
+      background-color: ${({ theme }) => theme['green-300']};
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 `
 export const TransactionType = styled(RadioGroup.Root)`
