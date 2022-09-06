@@ -1,8 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Dialog from '@radix-ui/react-dialog'
 import { ArrowCircleUp, X, ArrowCircleDown } from 'phosphor-react'
+import { useContext } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
 import {
   Overlay,
   Content,
@@ -25,6 +27,7 @@ export function NewTransaction() {
   const {
     register,
     handleSubmit,
+    reset,
     control,
     formState: { isSubmitting },
   } = useForm<NewTransactionFormInputs>({
@@ -34,9 +37,11 @@ export function NewTransaction() {
     },
   })
 
+  const { createTransaction } = useContext(TransactionsContext)
+
   async function handleAddNewTransaction(data: NewTransactionFormInputs) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(data)
+    createTransaction(data)
+    reset()
   }
   return (
     <Dialog.Portal>
